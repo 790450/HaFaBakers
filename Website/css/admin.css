@@ -1,0 +1,428 @@
+/* Admin Panel Styles */
+
+.login-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.login-box {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-box input {
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.admin-dashboard {
+    min-height: 100vh;
+    background: #f9f9f9;
+}
+
+.admin-dashboard header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.admin-dashboard header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.category-input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.category-input-group select {
+    flex: 1;
+}
+
+.category-input-group button {
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+}
+
+.pricing-fields {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+}
+
+.section-header h2 {
+    color: var(--text-color);
+}
+
+.month-selector {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.month-selector input {
+    padding: 0.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Menu Table */
+.menu-table-container {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.menu-table thead {
+    background: var(--primary-color);
+    color: white;
+}
+
+.menu-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.menu-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.menu-table tbody tr:hover {
+    background: var(--accent-color);
+}
+
+.menu-table-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.table-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.table-btn-edit {
+    background: #17a2b8;
+    color: white;
+}
+
+.table-btn-edit:hover {
+    background: #138496;
+}
+
+.table-btn-delete {
+    background: var(--error-color);
+    color: white;
+}
+
+.table-btn-delete:hover {
+    background: #c82333;
+}
+
+/* Sales Summary */
+.sales-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.summary-card h3 {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.summary-card p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Orders Table */
+.orders-table-container {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table thead {
+    background: var(--primary-color);
+    color: white;
+}
+
+.orders-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.orders-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.orders-table tbody tr:hover {
+    background: var(--accent-color);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 0.25rem;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-table-container,
+    .orders-table-container {
+        overflow-x: auto;
+    }
+    
+    .menu-table,
+    .orders-table {
+        min-width: 600px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .sales-summary {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .login-box {
+        padding: 2rem;
+        margin: 1rem;
+    }
+    
+    .table-actions {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .table-btn {
+        width: 100%;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-dashboard header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .month-selector {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .month-selector input,
+    .month-selector button {
+        width: 100%;
+    }
+    
+    .header-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .header-actions .btn {
+        width: 100%;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .category-input-group {
+        flex-direction: column;
+    }
+    
+    .category-input-group button {
+        width: 100%;
+    }
+}
+

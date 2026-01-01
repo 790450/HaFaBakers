@@ -1,0 +1,28 @@
+background-color: #333;
+    overflow: hidden;
+  }
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar .icon {
+    display: grid;
+  }
+
+.navbar a.split {
+    float: right;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+              <a href="#Home" class="active">Home</a>
+              <a href="#news">News</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+              <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>

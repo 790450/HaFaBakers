@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Home Baking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-box">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <input type="password" id="adminPassword" placeholder="Enter Admin Password" required>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p id="loginError" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard -->
+    <div id="adminDashboard" class="admin-dashboard" style="display: none;">
+        <header>
+            <div class="container">
+                <h1>Admin Panel</h1>
+                <nav>
+                    <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+                    <a href="index.html" class="btn btn-link">View Site</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="menu">Manage Menu</button>
+                <button class="tab-btn" data-tab="sales">Sales Report</button>
+            </div>
+
+            <!-- Menu Management Tab -->
+            <div id="menuTab" class="tab-content active">
+                <div class="section-header">
+                    <h2>Menu Management</h2>
+                    <div class="header-actions">
+                        <button id="addCategoryBtn" class="btn btn-secondary">Add Category</button>
+                        <button id="addItemBtn" class="btn btn-primary">Add New Item</button>
+                    </div>
+                </div>
+
+                <div class="menu-table-container">
+                    <table class="menu-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Category</th>
+                                <th>Weight</th>
+                                <th>Price (₹)</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="menuTableBody">
+                            <!-- Menu items will be dynamically loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sales Report Tab -->
+            <div id="salesTab" class="tab-content">
+                <div class="section-header">
+                    <h2>Monthly Sales Report</h2>
+                    <div class="month-selector">
+                        <input type="month" id="monthSelector" value="">
+                        <button id="exportCSV" class="btn btn-secondary">Export CSV</button>
+                    </div>
+                </div>
+
+                <div class="sales-summary">
+                    <div class="summary-card">
+                        <h3>Total Orders</h3>
+                        <p id="totalOrders">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Total Revenue</h3>
+                        <p id="totalRevenue">₹0</p>
+                    </div>
+                </div>
+
+                <div class="orders-table-container">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <!-- Orders will be dynamically loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit Item Modal -->
+    <div id="itemModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add Menu Item</h2>
+                <button id="closeModal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="itemForm">
+                    <input type="hidden" id="itemId">
+                    
+                    <div class="form-group">
+                        <label for="itemName">Item Name *</label>
+                        <input type="text" id="itemName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemType">Type *</label>
+                        <select id="itemType" required>
+                            <option value="egg">Egg</option>
+                            <option value="eggless">Eggless</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemCategory">Category *</label>
+                        <div class="category-input-group">
+                            <select id="itemCategory" required>
+                                <!-- Categories will be dynamically loaded -->
+                            </select>
+                            <button type="button" id="addNewCategoryBtn" class="btn btn-secondary" title="Add New Category">+</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pricingType">Pricing Type *</label>
+                        <select id="pricingType" required>
+                            <option value="weight">Weight Based</option>
+                            <option value="piece">Piece Based</option>
+                        </select>
+                        <small>Choose how this item is priced</small>
+                    </div>
+
+                    <!-- Weight Based Pricing Fields -->
+                    <div id="weightBasedFields" class="pricing-fields">
+                        <div class="form-group">
+                            <label for="itemWeight">Weight (grams) *</label>
+                            <input type="number" id="itemWeight" min="1" step="1" placeholder="e.g., 500 for 500g">
+                            <small>Enter weight in grams (e.g., 500 for 500g, 1000 for 1kg)</small>
+                        </div>
+                    </div>
+
+                    <!-- Piece Based Pricing Fields -->
+                    <div id="pieceBasedFields" class="pricing-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="itemPricePerPiece">Price per Piece (₹) *</label>
+                            <input type="number" id="itemPricePerPiece" min="0" step="0.01" placeholder="e.g., 200">
+                            <small>Fixed price for one piece</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemPrice">Total Price (₹) *</label>
+                        <input type="number" id="itemPrice" min="0" step="0.01" required placeholder="e.g., 500">
+                        <small id="priceCalculationNote">Enter the total price for this item</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemImage">Image URL</label>
+                        <input type="text" id="itemImage" placeholder="https://example.com/image.jpg">
+                        <small>Leave empty for placeholder image</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemDescription">Description</label>
+                        <textarea id="itemDescription" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Item</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Category Modal -->
+    <div id="categoryModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Category</h2>
+                <button id="closeCategoryModal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="categoryForm">
+                    <div class="form-group">
+                        <label for="newCategoryName">Category Name *</label>
+                        <input type="text" id="newCategoryName" required placeholder="e.g., Chocolate Cake">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancelCategoryBtn" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Category</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
+

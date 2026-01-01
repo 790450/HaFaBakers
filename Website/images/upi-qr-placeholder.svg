@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" viewBox="0 0 250 250">
+  <rect width="250" height="250" fill="#f0f0f0"/>
+  <rect x="10" y="10" width="230" height="230" fill="white" stroke="#333" stroke-width="2"/>
+  
+  <!-- QR Code Pattern (simplified) -->
+  <rect x="30" y="30" width="50" height="50" fill="#333"/>
+  <rect x="40" y="40" width="30" height="30" fill="white"/>
+  <rect x="45" y="45" width="20" height="20" fill="#333"/>
+  
+  <rect x="170" y="30" width="50" height="50" fill="#333"/>
+  <rect x="180" y="40" width="30" height="30" fill="white"/>
+  <rect x="185" y="45" width="20" height="20" fill="#333"/>
+  
+  <rect x="30" y="170" width="50" height="50" fill="#333"/>
+  <rect x="40" y="180" width="30" height="30" fill="white"/>
+  <rect x="45" y="185" width="20" height="20" fill="#333"/>
+  
+  <!-- Alignment pattern -->
+  <rect x="100" y="100" width="50" height="50" fill="#333"/>
+  <rect x="110" y="110" width="30" height="30" fill="white"/>
+  <rect x="115" y="115" width="20" height="20" fill="#333"/>
+  
+  <!-- Data pattern (simplified) -->
+  <rect x="90" y="30" width="10" height="10" fill="#333"/>
+  <rect x="110" y="30" width="10" height="10" fill="#333"/>
+  <rect x="130" y="30" width="10" height="10" fill="#333"/>
+  <rect x="30" y="90" width="10" height="10" fill="#333"/>
+  <rect x="30" y="110" width="10" height="10" fill="#333"/>
+  <rect x="30" y="130" width="10" height="10" fill="#333"/>
+  <rect x="90" y="170" width="10" height="10" fill="#333"/>
+  <rect x="110" y="170" width="10" height="10" fill="#333"/>
+  <rect x="130" y="170" width="10" height="10" fill="#333"/>
+  <rect x="170" y="90" width="10" height="10" fill="#333"/>
+  <rect x="170" y="110" width="10" height="10" fill="#333"/>
+  <rect x="170" y="130" width="10" height="10" fill="#333"/>
+  
+  <text x="125" y="220" text-anchor="middle" font-family="Arial" font-size="14" fill="#666">UPI QR Code</text>
+  <text x="125" y="235" text-anchor="middle" font-family="Arial" font-size="10" fill="#999">Placeholder - Replace with actual QR</text>
+</svg>
+

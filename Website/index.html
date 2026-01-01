@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Baking - Delicious Cakes & Brownies</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>🍰 Home Baking</h1>
+        <nav>
+            <button id="cartBtn" class="cart-btn">
+                Cart (<span id="cartCount">0</span>)
+            </button>
+            <a href="admin.html" class="admin-link">Admin</a>
+        </nav>
+    </div>
+</header>
+
+<main class="container">
+    <section class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="egg">Egg</button>
+        <button class="filter-btn" data-filter="eggless">Eggless</button>
+    </section>
+
+    <section class="menu-grid" id="menuGrid"></section>
+</main>
+
+<!-- CART SIDEBAR -->
+<div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button id="closeCart" class="close-btn">&times;</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+        <div class="cart-total">
+            <strong>Total: ₹<span id="cartTotal">0</span></strong>
+        </div>
+
+        <button id="clearCart" class="btn btn-secondary">Clear Cart</button>
+        <button id="printBill" class="btn btn-primary">Print Bill</button>
+
+<div class="customer-details">
+    <h3>Customer Details</h3>
+
+    <div class="input-group">
+        <input 
+            type="text" 
+            id="custName" 
+            placeholder="Name: Enter your first name">
+        <span class="input-icon"></span>
+    </div>
+
+    <div class="input-group">
+        <input 
+            type="tel" 
+            id="custMobile" 
+            placeholder="Phone Number: Enter your phone number">
+        <span class="input-icon"></span>
+    </div>
+
+    <div class="input-group">
+        <textarea 
+            id="custAddress" 
+            placeholder="Delivery Address: Enter your address"></textarea>
+        <span class="input-icon textarea-icon"></span>
+    </div>
+
+    <div class="input-group">
+        <textarea 
+            id="custNotes" 
+            placeholder="Any Customizations: Enter if any customizations"></textarea>
+        <span class="input-icon textarea-icon"></span>
+    </div>
+</div>
+
+
+<button id="placeOrder" class="big-order-btn">
+    PLACE ORDER
+</button>
+
+    </div>
+</div>
+
+<div id="cartOverlay" class="cart-overlay"></div>
+
+<div id="billPrint" class="bill-print"></div>
+
+<script src="js/storage.js"></script>
+<script src="js/menu.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
